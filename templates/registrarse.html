@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../static/registrarse.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='registrarse.css')}}">
         <title>Registro</title>
         </head>
     <body>
         <div class="container">
             <h2 class="title">Registro</h2>
             <div class="form-card">
-                <form onsubmit="event.preventDefault(); window.location.href='inicio.html'">
+                <form method="POST" action="{{ url_for('registrarse')}}">
                     <div class="form-group">
                         <input type="text" placeholder="Nombre" class="input-field" name="nombre">
                     </div>
@@ -26,7 +26,7 @@
                         <button type="submit" class="register-button">Registrarse</button>
                 </form>
                 <p class="login-link-text">
-                    ¿Ya tienes una cuenta? <a href="inicio.html" class="login-link">Iniciar sesión</a>
+                    ¿Ya tienes una cuenta? <a href="{{ url_for('inicio')}}" class="login-link">Iniciar sesión</a>
                 </p>
             </div>
         </div>
