@@ -12,36 +12,36 @@ def inicio():
 
 
 @app.route('/registrarse', methods=['GET','POST'])
-def registro():
+def registrarse():
     if request.method == 'POST':
         nombre = request.form['nombre']
         gmail = request.form['email']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
 
-    if password != confirm_password:
-            return "Las contraseñas no coinciden."
+        if password != confirm_password:
+                return "Las contraseñas no coinciden."
     
 
-    contra_hash = generate_password_hash(password)
-    conn = conectar()
+        contra_hash = generate_password_hash(password)
+        conn = conectar()
 
-    if conn:
-            try:
-                with conn.cursor() as cur:
-                    cur.execute("""
-                        INSERT INTO usuarios (nombre, apellido, gmail, contra_hash)
-                        VALUES (%s, %s, %s, %s)
-                    """, (nombre, '', gmail, contra_hash)) 
-                    conn.commit()
-                    return redirect(url_for('inicio'))
-            except Exception as e:
-                return f"Error al registrar: {e}"
-            finally:
-                conn.close()
-    else:
-        return "Error de conexión a la base dedatos"
-    
+        if conn:
+                try:
+                    with conn.cursor() as cur:
+                        cur.execute("""
+                            INSERT INTO usuarios (nombre, apellido, gmail, contra_hash)
+                            VALUES (%s, %s, %s, %s)
+                        """, (nombre, '', gmail, contra_hash)) 
+                        conn.commit()
+                        return redirect(url_for('inicio'))
+                except Exception as e:
+                    return f"Error al registrar: {e}"
+                finally:
+                    conn.close()
+        else:
+            return "Error de conexión a la base dedatos"
+        
     return render_template('registrarse.html')
 
 if __name__ == '__main__':

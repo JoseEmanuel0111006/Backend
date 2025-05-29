@@ -6,7 +6,7 @@ def conectar():
             host = "localhost",
             database = "bd_escuela",
             user= "postgres",
-            password= "Emanuel010101",
+            password= "1309",
             port= "5432"
         )
         return conexion
@@ -16,11 +16,11 @@ def conectar():
     
 
     
-#if __name__ == "__main__":
-#    conn = conectar()  # Definís conn llamando a la función
-#
-#    if conn:
-#        print("esta bien")
-#        conn.close()
-#    else:
-#        print("esta mal")
+if __name__ == "__main__":
+   conn = conectar()  # Definís conn llamando a la función
+
+   if conn:
+       print("esta bien")
+       conn.close()
+   else:
+       print("esta mal")
