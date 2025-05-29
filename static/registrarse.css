@@ -1,0 +1,125 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #eae6f5;
+    margin: 0;
+    padding: 1rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Título */
+.title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #5c4d91;
+    text-align: center;
+}
+
+/* Tarjeta del formulario */
+.form-card {
+    background: #f8f6fc;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 8px 8px 16px #d4d0e1, -8px -8px 16px #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Grupo de inputs */
+.form-group {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* Campo de entrada */
+.input-field {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background: #eae6f5;
+    box-shadow: inset 4px 4px 8px #d2cde1, inset -4px -4px 8px #ffffff;
+    color: #5c4d91;
+}
+
+.input-field:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 5px #c9c3d9, inset -2px -2px 5px #ffffff;
+}
+
+/* Botón de registro */
+.register-button {
+    background-color: #7a5cc6;
+    color: white;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.register-button:hover {
+    background-color: #6842b8;
+    transform: translateY(-2px);
+}
+
+/* Texto del enlace */
+.login-link-text {
+    color: #6b6683;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.login-link {
+    color: #7a5cc6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+    color: #5c4d91;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-card {
+        padding: 2rem;
+    }
+
+    .input-field,
+    .register-button {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+}
